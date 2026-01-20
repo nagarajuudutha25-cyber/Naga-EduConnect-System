@@ -1,6 +1,10 @@
 package com.edutech.progressive.controller;
 
 import com.edutech.progressive.entity.Student;
+import com.edutech.progressive.service.impl.StudentServiceImplArraylist;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,39 +14,50 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-// @RestController
-// @RequestMapping("/student")
+
+@RestController
 public class StudentController {
-    //   @GetMapping
+ 
+    private StudentServiceImplArraylist serviceImplArraylist = new StudentServiceImplArraylist();
+    @GetMapping("/student")
     public ResponseEntity<List<Student>> getAllStudents() {
         return null;
     }
-    // @GetMapping("/{studentId}")
+ 
+    @GetMapping("/student/{studentId}")
     public ResponseEntity<Student> getStudentById(int studentId) {
         return null;
     }
-    // @PostMapping
+ 
+    @PostMapping("/student")
     public ResponseEntity<Integer> addStudent(Student student) {
         return null;
     }
-    // @PutMapping("/{studentId}")
+ 
+    @PutMapping("/student/{studentId}")
     public ResponseEntity<Void> updateStudent(int studentId, Student student) {
         return null;
     }
-    //  @DeleteMapping("/{studentId}")
+ 
+    @DeleteMapping("/student/{studentId}")
     public ResponseEntity<Void> deleteStudent(int studentId) {
         return null;
     }
-    // @GetMapping("/fromArrayList")
+ 
+ 
+    @GetMapping("/student/fromArrayList")
     public ResponseEntity<List<Student>> getAllStudentFromArrayList() {
-        return null;
+        return new ResponseEntity(serviceImplArraylist.getAllStudents(),HttpStatus.OK);
     }
-    // @PostMapping("/toArrayList")
+ 
+    
+    @PostMapping("/student/toArrayList")
     public ResponseEntity<Integer> addStudentToArrayList(Student student) {
-        return null;
+        return new ResponseEntity(serviceImplArraylist.addStudent(student),HttpStatus.CREATED);
     }
-    // @GetMapping("/fromArrayList/sorted")
+ 
+    @GetMapping("student/fromArrayList/sorted")
     public ResponseEntity<List<Student>> getAllStudentSortedByNameFromArrayList() {
-        return null;
+        return new ResponseEntity<>(serviceImplArraylist.getAllStudentSortedByName(),HttpStatus.OK);
     }
 }
