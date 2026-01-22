@@ -1,7 +1,6 @@
 package com.edutech.progressive.controller;
 
 import com.edutech.progressive.entity.Teacher;
-<<<<<<< HEAD
 import com.edutech.progressive.service.impl.TeacherServiceImplJpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,9 @@ import java.util.Collections;
 import java.util.List;
 
 @RestController
+
 @RequestMapping("/teacher")
+
 public class TeacherController {
 
     @Autowired
@@ -84,7 +85,6 @@ public class TeacherController {
             teacherServiceImplJpa.updateTeacher(teacher);
 
             return new ResponseEntity<>(HttpStatus.OK);
-
         } catch (Exception e) {
 
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -132,35 +132,3 @@ public class TeacherController {
     }
 
 }
-=======
-import org.springframework.http.ResponseEntity;
-
-import java.util.List;
-
-public class TeacherController {
-
-    public ResponseEntity<List<Teacher>> getAllTeachers() {
-        return null;
-    }
-
-    public ResponseEntity<Teacher> getTeacherById(int teacherId) {
-        return null;
-    }
-
-    public ResponseEntity<Integer> addTeacher(Teacher teacher) {
-        return null;
-    }
-
-    public ResponseEntity<Void> updateTeacher(int teacherId, Teacher teacher) {
-        return null;
-    }
-
-    public ResponseEntity<Void> deleteTeacher(int teacherId) {
-        return null;
-    }
-
-    public ResponseEntity<List<Teacher>> getTeacherSortedByYearsOfExperience() {
-        return null;
-    }
-}
->>>>>>> 25b675a4964ddca4babd1fa0f41bd8b374326e9b
