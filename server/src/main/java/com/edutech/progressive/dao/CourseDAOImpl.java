@@ -24,7 +24,11 @@ public class CourseDAOImpl implements CourseDAO{
       
         ps.setString(1,course.getCourseName());
         ps.setString(2,course.getDescription());
+<<<<<<< HEAD
         ps.setInt(3,course.getTeacher().getTeacherId());
+=======
+        ps.setInt(3,course.getTeacherId());
+>>>>>>> 25b675a4964ddca4babd1fa0f41bd8b374326e9b
          int rows=ps.executeUpdate();
          ResultSet gk=ps.getGeneratedKeys();
          if(gk.next()){
@@ -47,7 +51,11 @@ public class CourseDAOImpl implements CourseDAO{
          course.setCourseId(rs.getInt("course_id"));
          course.setCourseName(rs.getString("course_name"));
          course.setDescription(rs.getString("description"));
+<<<<<<< HEAD
          course.getTeacher().setTeacherId(rs.getInt("teacher_id"));
+=======
+         course.setTeacherId(rs.getInt("teacher_id"));
+>>>>>>> 25b675a4964ddca4babd1fa0f41bd8b374326e9b
 
          return course;
       }
@@ -63,7 +71,11 @@ public class CourseDAOImpl implements CourseDAO{
        PreparedStatement ps=connection.prepareStatement(query);
        ps.setString(1,course.getCourseName());
        ps.setString(2,course.getDescription());
+<<<<<<< HEAD
        ps.setInt(3,course.getTeacher().getTeacherId());
+=======
+       ps.setInt(3,course.getTeacherId());
+>>>>>>> 25b675a4964ddca4babd1fa0f41bd8b374326e9b
        ps.setInt(4,course.getCourseId());
        ps.executeUpdate();
 
@@ -91,7 +103,11 @@ public class CourseDAOImpl implements CourseDAO{
          course.setCourseId(rs.getInt("course_id"));
          course.setCourseName(rs.getString("course_name"));
          course.setDescription(rs.getString("description"));
+<<<<<<< HEAD
          course.getTeacher().setTeacherId(rs.getInt("teacher_id"));
+=======
+         course.setTeacherId(rs.getInt("teacher_id"));
+>>>>>>> 25b675a4964ddca4babd1fa0f41bd8b374326e9b
          list.add(course);
       }
        return list;
